@@ -10,6 +10,7 @@ GEM
     afmotion (2.6)
       motion-cocoapods (>= 1.4.1)
       motion-require (>= 0.1)
+    bubble-wrap (1.9.5)
     claide (1.0.0)
     cocoapods (1.0.0)
       activesupport (>= 4.0.2)
@@ -69,6 +70,7 @@ PLATFORMS
 
 DEPENDENCIES
   afmotion (~> 2.6)
+  bubble-wrap (~> 1.9, >= 1.9.5)
   rake
 
 BUNDLED WITH

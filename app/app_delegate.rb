@@ -1,7 +1,7 @@
 class AppDelegate
   def application(application, didFinishLaunchingWithOptions:launchOptions)
 
-    AFMotion::SessionClient.build_shared("http://localhost:3000/api/v1/") do
+    AFMotion::SessionClient.build_shared("http://localhost:3000/") do
       session_configuration :default
       header "Accept", "application/json"
       response_serializer :json
@@ -18,7 +18,8 @@ class AppDelegate
     tab_bar_controller = UITabBarController.alloc.init 
     tab_bar_controller.viewControllers = [
       HomesController.alloc.init,
-      DiscoversController.alloc.init,
+      # DiscoversController.alloc.init,
+      SessionsController.alloc.init,
       FightpostsController.alloc.init,
       NoticesController.alloc.init,
       UINavigationController.alloc.initWithRootViewController(UsersController.alloc.init)
