@@ -18,10 +18,9 @@ class AppDelegate
     tab_bar_controller = UITabBarController.alloc.init 
     tab_bar_controller.viewControllers = [
       HomesController.alloc.init,
-      # DiscoversController.alloc.init,
-      SessionsController.alloc.init,
+      DiscoversController.alloc.init,
       FightpostsController.alloc.init,
-      NoticesController.alloc.init,
+      UINavigationController.alloc.initWithRootViewController(NoticesController.alloc.init),
       UINavigationController.alloc.initWithRootViewController(UsersController.alloc.init)
     ]  
     tab_bar_controller

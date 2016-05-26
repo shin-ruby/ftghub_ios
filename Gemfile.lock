@@ -44,6 +44,7 @@ GEM
       netrc (= 0.7.8)
     cocoapods-try (1.0.0)
     colored (1.2)
+    dbt (1.2.0)
     escape (0.0.4)
     fourflusher (0.3.0)
     fuzzy_match (2.0.4)
@@ -53,7 +54,10 @@ GEM
     molinillo (0.4.5)
     motion-cocoapods (1.8.0)
       cocoapods (>= 1.0.0)
+    motion-kit (1.0.0)
+      dbt (~> 1.1, >= 1.1.5)
     motion-require (0.2.0)
+    motion-reveal (1.0.0)
     nap (1.1.0)
     netrc (0.7.8)
     rake (11.1.2)
@@ -71,6 +75,8 @@ PLATFORMS
 DEPENDENCIES
   afmotion (~> 2.6)
   bubble-wrap (~> 1.9, >= 1.9.5)
+  motion-kit
+  motion-reveal
   rake
 
 BUNDLED WITH
