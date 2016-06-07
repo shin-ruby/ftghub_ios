@@ -1,5 +1,5 @@
 class LoginView < UIView
-  attr_accessor :login_link
+  attr_accessor :login_link, :sign_up_link
 
   def self.build_login_page
     login_view = LoginView.alloc.initWithFrame(UIScreen.mainScreen.bounds)

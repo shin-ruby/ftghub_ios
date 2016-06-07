@@ -7,6 +7,8 @@ class AppDelegate
       response_serializer :json
     end
 
+    @homeController = HomesController.alloc.initWithStyle(UITableViewStylePlain)
+
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
     @window.rootViewController = createTabBar
     @window.makeKeyAndVisible
@@ -17,7 +19,7 @@ class AppDelegate
   def createTabBar
     tab_bar_controller = UITabBarController.alloc.init 
     tab_bar_controller.viewControllers = [
-      HomesController.alloc.init,
+      UINavigationController.alloc.initWithRootViewController(@homeController),
       DiscoversController.alloc.init,
       FightpostsController.alloc.init,
       UINavigationController.alloc.initWithRootViewController(NoticesController.alloc.init),

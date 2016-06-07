@@ -12,21 +12,22 @@ class SessionsController < UIViewController
   end
 
   def login
-    api_client.token(@login_form.email.text, @login_form.password.text) do |result|
-      # if result['authentication_token']
-      #   user.save_token(@login_form.email.text, result['authentication_token'])
-      #   display_message "Welcome", "Welcome#{@login_form.email.text}."
-      # else
-      #   display_message "Error", "Invalid Credentials."
-      # end
-
-      if result['authentication_token']
-        @user = User.new("email" => @login_form.email.text, "authentication_token" => result['authentication_token'])
-        save_token(@user.email, @user.authentication_token)
-        display_message "Welcome", "Welcome#{@login_form.email.text}."
-      else
-        display_message "Error", "Invalid Credentials."
+    unless @login_form.email.text.empty? && @login_form.password.text.empty?
+      api_client.token(@login_form.email.text, @login_form.password.text) do |result|
+        if result['authentication_token']
+          @user = User.new("email" => @login_form.email.text, "authentication_token" => result['authentication_token'])
+          save_token(@user.email, @user.authentication_token)
+          display_message "Welcome", "Welcome#{@login_form.email.text}."
+        else
+          display_message "Error", "Invalid Credentials."
+        end
       end
+    else
+      alert = UIAlertView.alloc.initWithTitle "Invalid information", message:"Invalid email/password combination",
+      delegate: nil, cancelButtonTitle: "cancel", otherButtonTitles: nil
+
+      alert.show
+
     end
   end
 
