@@ -23,7 +23,7 @@ class UsersController < UIViewController
     User.recent do |users|
       @label = UILabel.alloc.init
       @label.frame = [[150, 150], [250, 30]]
-      @label.text = users.email
+      @label.text = users.profile.name
       view.addSubview(@label)
     end
   end

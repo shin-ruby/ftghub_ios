@@ -1,10 +1,11 @@
 class User
-  attr_accessor :username, :email, :authentication_token
+  attr_accessor :username, :email, :authentication_token, :profile
 
   def initialize(user)
     @username = user['username']
     @email = user['email']
     @authentication_token = user['authentication_token']
+    self.profile = Profile.new(user["profile"])
   end
 
   def self.recent(&block)
